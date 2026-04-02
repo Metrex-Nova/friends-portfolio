@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio - Modern & Futuristic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">&lt;dev /&gt;</span>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#books" class="nav-link">Books</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#music" class="nav-link">Music</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-image">
+                <img src="logo.png" alt="Profile">
+            </div>
+            <h1 class="hero-title">Welcome to My Digital Space</h1>
+            <p class="hero-subtitle">Researcher | Developer | Music Enthusiast</p>
+            <p class="hero-description">
+                Exploring the intersection of code, research, and creativity. Building tomorrow's solutions today.
+            </p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">Explore</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About / Personal Details Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate developer and researcher with a keen interest in cutting-edge technology. My journey spans multiple disciplines—from software development to academic research, and a deep love for music and creativity.</p>
+                    <p>I believe in continuous learning and pushing the boundaries of what's possible. When I'm not coding or researching, you'll find me exploring new music or contributing to open-source projects.</p>
+                    
+                    <div class="skills-section">
+                        <h3>Tech Stack</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <span class="skill-icon">⚙️</span>
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                            <div class="skill-card">
+                                <span class="skill-icon">🐍</span>
+                                <span class="skill-name">Python</span>
+                            </div>
+                            <div class="skill-card">
+                                <span class="skill-icon">⚛️</span>
+                                <span class="skill-name">React</span>
+                            </div>
+                            <div class="skill-card">
+                                <span class="skill-icon">🎨</span>
+                                <span class="skill-name">CSS/Design</span>
+                            </div>
+                            <div class="skill-card">
+                                <span class="skill-icon">🗄️</span>
+                                <span class="skill-name">SQL</span>
+                            </div>
+                            <div class="skill-card">
+                                <span class="skill-icon">📊</span>
+                                <span class="skill-name">Data Science</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-group">
+                        <a href="#" class="btn btn-outline" download>📥 Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Books I've Read</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover">📕</div>
+                    <h3>Thinking, Fast and Slow</h3>
+                    <p class="book-author">Daniel Kahneman</p>
+                    <p class="book-review">A brilliant exploration of decision-making and cognitive biases. Essential reading for understanding human behavior.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">📗</div>
+                    <h3>The Pragmatic Programmer</h3>
+                    <p class="book-author">Hunt & Thomas</p>
+                    <p class="book-review">Timeless wisdom for software developers. Every chapter is packed with practical advice and best practices.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">📙</div>
+                    <h3>Deep Work</h3>
+                    <p class="book-author">Cal Newport</p>
+                    <p class="book-review">A guide to cultivating focus and producing meaningful work. Highly relevant in our distraction-filled world.</p>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">📔</div>
+                    <h3>The Structure of Scientific Revolutions</h3>
+                    <p class="book-author">Thomas S. Kuhn</p>
+                    <p class="book-review">Revolutionary insights into how science progresses. Changes the way you think about knowledge and progress.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">📖</div>
+                    <h3>Clean Code</h3>
+                    <p class="book-author">Robert C. Martin</p>
+                    <p class="book-review">The definitive guide to writing beautiful, maintainable code. Every developer should read this.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">📕</div>
+                    <h3>Atomic Habits</h3>
+                    <p class="book-author">James Clear</p>
+                    <p class="book-review">Small changes, remarkable results. Practical framework for building better habits and systems.</p>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section">
+        <div class="container">
+            <h2 class="section-title">My Research</h2>
+            <div class="research-list">
+                <div class="research-card featured">
+                    <div class="featured-badge">Featured</div>
+                    <h3>AI-Driven Optimization of Complex Systems</h3>
+                    <p class="research-year">2024</p>
+                    <p class="research-abstract">
+                        This paper explores novel approaches to applying machine learning techniques for optimizing large-scale complex systems. We present a framework for real-time processing and demonstrate significant improvements in efficiency metrics.
+                    </p>
+                    <div class="research-links">
+                        <a href="#" class="link-btn">📄 Paper</a>
+                        <a href="#" class="link-btn">🔗 GitHub</a>
+                        <a href="#" class="link-btn">🎬 Presentation</a>
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <h3>Quantum Computing Applications in Cryptography</h3>
+                    <p class="research-year">2023</p>
+                    <p class="research-abstract">
+                        An investigation into the implications of quantum computing on current cryptographic standards and exploration of post-quantum algorithms.
+                    </p>
+                    <div class="research-links">
+                        <a href="#" class="link-btn">📄 Paper</a>
+                        <a href="#" class="link-btn">🔗 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <h3>Neural Networks for Pattern Recognition</h3>
+                    <p class="research-year">2023</p>
+                    <p class="research-abstract">
+                        Deep dive into convolutional neural networks and their applications in image recognition, with case studies on medical imaging.
+                    </p>
+                    <div class="research-links">
+                        <a href="#" class="link-btn">📄 Paper</a>
+                        <a href="#" class="link-btn">🔗 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <h3>Blockchain Scalability Solutions</h3>
+                    <p class="research-year">2022</p>
+                    <p class="research-abstract">
+                        Comparative analysis of layer-2 solutions and their effectiveness in addressing blockchain scalability challenges.
+                    </p>
+                    <div class="research-links">
+                        <a href="#" class="link-btn">📄 Paper</a>
+                        <a href="#" class="link-btn">🔗 GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Journey Section -->
+    <section id="music" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">My Music Journey</h2>
+            <div class="music-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2010 - Started Piano</h3>
+                            <p>Began learning classical piano, studied for 5 years. Developed foundational music theory knowledge.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2015 - Guitar Era</h3>
+                            <p>Transitioned to acoustic and electric guitar. Started playing in local bands and explored diverse genres.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2018 - Music Production</h3>
+                            <p>Learned music production and started creating electronic music. Dabbled in beat-making and synthesis.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2021 - Present</h3>
+                            <p>Composing original pieces, playing at local venues, and exploring the fusion of code and music.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="music-playlists">
+                    <h3>My Favorite Playlists</h3>
+                    <div class="playlist-grid">
+                        <div class="playlist-card">
+                            <div class="playlist-icon">🎵</div>
+                            <h4>Focus & Code</h4>
+                            <p>Ambient and lo-fi beats for deep work sessions</p>
+                        </div>
+                        <div class="playlist-card">
+                            <div class="playlist-icon">🎸</div>
+                            <h4>Guitar Legends</h4>
+                            <p>Classic and contemporary guitar masterpieces</p>
+                        </div>
+                        <div class="playlist-card">
+                            <div class="playlist-icon">🎹</div>
+                            <h4>Piano Classics</h4>
+                            <p>Timeless compositions from great composers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Other Stuff Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Other Stuff</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">🏆</div>
+                    <h3>Hackathon Winner 2024</h3>
+                    <p>Won first place in the annual AI Hackathon with an innovative machine learning solution for real-time data analysis.</p>
+                    <a href="#" class="project-link">Learn more →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🚀</div>
+                    <h3>Open Source Contributor</h3>
+                    <p>Active contributor to multiple open-source projects. Passionate about giving back to the developer community.</p>
+                    <a href="#" class="project-link">View contributions →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">📝</div>
+                    <h3>Technical Blog</h3>
+                    <p>Write regularly about web development, AI, and research. Sharing knowledge and insights with the community.</p>
+                    <a href="#" class="project-link">Read articles →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🎓</div>
+                    <h3>Mentor & Speaker</h3>
+                    <p>Mentor junior developers and speak at tech conferences about innovation and best practices in software development.</p>
+                    <a href="#" class="project-link">View talks →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">⚡</div>
+                    <h3>Side Projects</h3>
+                    <p>Constantly experimenting with new technologies and building cool tools. Portfolio of passion projects always in progress.</p>
+                    <a href="#" class="project-link">Explore projects →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">💡</div>
+                    <h3>Innovation Lab</h3>
+                    <p>Exploring emerging technologies like AI, blockchain, and quantum computing. Testing ideas and pushing boundaries.</p>
+                    <a href="#" class="project-link">See experiments →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="GitHub">
+                            <span class="social-icon">💻</span>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <span class="social-icon">💼</span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <span class="social-icon">🐦</span>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="mailto:hello@example.com" class="social-link" title="Email">
+                            <span class="social-icon">✉️</span>
+                            <span>Email</span>
+                        </a>
+                    </div>
+
+                    <div class="email-copy">
+                        <div class="email-box">
+                            <code id="emailCode">hello@example.com</code>
+                            <button class="copy-btn" id="copyEmailBtn" title="Copy to clipboard">📋</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Portfolio. Crafted with <span class="heart">❤️</span> using HTML, CSS & JavaScript</p>
+            <div class="footer-links">
+                <a href="#home">Back to Top</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Animation -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
