@@ -1,0 +1,1179 @@
+/* ============================================
+   PORTFOLIO WEBSITE - MINIMALIST DESIGN
+   Clean, calm, and intentional aesthetic
+   Professional product design sensibility
+   ============================================ */
+
+/* ============================================
+   1. ROOT VARIABLES - NEUTRAL PALETTE
+   ============================================ */
+
+:root {
+    /* Accent Color: Soft, muted blue-gray */
+    --accent: #4B5563;
+    --accent-light: #6B7684;
+    
+    /* Dark Theme: Near-black with soft grays */
+    --bg-primary: #121212;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #242424;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border: rgba(180, 180, 180, 0.1);
+    
+    /* Light Theme: Off-white with warm grays */
+    --light-bg-primary: #ffffff;
+    --light-bg-secondary: #fafafa;
+    --light-bg-tertiary: #f5f5f5;
+    --light-text-primary: #1a1a1a;
+    --light-text-secondary: #6b6b6b;
+    --light-border: rgba(0, 0, 0, 0.08);
+    
+    /* Consistent Spacing Scale (8px base) */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    
+    /* Subtle Transitions */
+    --transition: 0.2s ease;
+    
+    /* Clean Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-full: 9999px;
+}
+
+/* ============================================
+   2. GLOBAL STYLES - CLEAN & MINIMAL
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Clean system font stack */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
+    transition: background-color var(--transition),
+                color var(--transition);
+}
+
+body.light-mode {
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafafa;
+    --bg-tertiary: #f5f5f5;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b6b6b;
+    --border: rgba(0, 0, 0, 0.08);
+}
+
+/* No decorative backgrounds - clean canvas */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-light);
+}
+
+/* ============================================
+   3. TYPOGRAPHY HIERARCHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Remove excessive gradients - use solid colors */
+
+/* ============================================
+   4. CONTAINER & UTILITY CLASSES
+   ============================================ */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ============================================
+   5. NAVIGATION - MINIMAL & CLEAN
+   ============================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    transition: all var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    transition: color var(--transition);
+}
+
+.logo:hover {
+    color: var(--accent);
+}
+
+.logo-text {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+/* Simple underline on hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all var(--transition);
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-primary);
+    margin: 5px 0;
+    border-radius: 1px;
+    transition: all var(--transition);
+}
+
+/* ============================================
+   6. HERO SECTION - CLEAN & SIMPLE
+   ============================================ */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    margin-top: 80px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto var(--spacing-xl);
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 7vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto var(--spacing-2xl);
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: fadeInUp 0.8s ease 0.3s backwards;
+}
+
+.scroll-indicator span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.scroll-arrow {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    border: 1px solid var(--text-secondary);
+    border-radius: 50%;
+    position: relative;
+}
+
+.scroll-arrow::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 6px;
+    background: var(--text-secondary);
+    animation: scroll 2s ease-in-out infinite;
+}
+
+/* ============================================
+   7. BUTTONS - SIMPLE & SUBTLE
+   ============================================ */
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all var(--transition);
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-light);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-secondary:hover {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ============================================
+   8. SECTIONS - CLEAN LAYOUT
+   ============================================ */
+
+.section {
+    padding: 5rem var(--spacing-lg) 5rem;
+    border-top: 1px solid var(--border);
+    position: relative;
+}
+
+.section-alt {
+    background-color: var(--bg-secondary);
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: left;
+    color: var(--text-primary);
+}
+
+/* Remove decorative underline - keep it minimal */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 1rem;
+}
+
+/* ============================================
+   9. ABOUT SECTION
+   ============================================ */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.skills-section {
+    margin: 2.5rem 0;
+}
+
+.skills-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.skill-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.skill-card:hover {
+    border-color: var(--accent);
+    background: var(--bg-tertiary);
+}
+
+.skill-icon {
+    font-size: 2rem;
+}
+
+.skill-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.cta-group {
+    margin-top: 2rem;
+}
+
+/* ============================================
+   10. BOOKS SECTION
+   ============================================ */
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.book-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    border-color: var(--accent);
+    background: var(--bg-tertiary);
+}
+
+.book-cover {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.book-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.book-author {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.book-review {
+    flex-grow: 1;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.rating {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+}
+
+/* ============================================
+   11. RESEARCH SECTION
+   ============================================ */
+
+.research-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.research-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+    position: relative;
+}
+
+.research-card.featured {
+    border: 1px solid var(--accent);
+    background: var(--bg-tertiary);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--accent);
+    color: #ffffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.research-card:hover {
+    border-color: var(--accent);
+    background: var(--bg-tertiary);
+}
+
+.research-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.research-year {
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.research-abstract {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.research-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.link-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.link-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ============================================
+   12. MUSIC SECTION
+   ============================================ */
+
+.music-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 100px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border: 2px solid var(--bg-primary);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.music-playlists {
+    margin-top: 1rem;
+}
+
+.music-playlists h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.playlist-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.playlist-card:hover {
+    border-color: var(--accent);
+    background: var(--bg-tertiary);
+}
+
+.playlist-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.playlist-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.playlist-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ============================================
+   13. PROJECTS SECTION
+   ============================================ */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+    background: var(--bg-tertiary);
+}
+
+.project-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+}
+
+.project-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.project-card p {
+    flex-grow: 1;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.project-link {
+    color: var(--accent);
+    font-weight: 500;
+    transition: color var(--transition);
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.project-link:hover {
+    color: var(--accent-light);
+}
+
+/* ============================================
+   14. CONTACT SECTION
+   ============================================ */
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-form {
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 0.875rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all var(--transition);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    background: var(--bg-tertiary);
+    border-color: var(--accent);
+}
+
+.contact-info {
+    animation: fadeInUp 0.6s ease 0.15s backwards;
+}
+
+.contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all var(--transition);
+    color: var(--text-primary);
+}
+
+.social-link:hover {
+    border-color: var(--accent);
+    background: var(--bg-tertiary);
+}
+
+.social-icon {
+    font-size: 1.3rem;
+    min-width: 20px;
+}
+
+.email-copy {
+    margin-top: 1.5rem;
+}
+
+.email-box {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+    transition: all var(--transition);
+}
+
+.email-box:hover {
+    border-color: var(--accent);
+}
+
+#emailCode {
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all var(--transition);
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.copy-btn:hover {
+    color: var(--accent);
+}
+
+/* ============================================
+   15. FOOTER
+   ============================================ */
+
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 3rem var(--spacing-lg);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.heart {
+    color: var(--accent);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    transition: color var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* ============================================
+   16. LOADING ANIMATION
+   ============================================ */
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loading.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--border);
+    border-top: 2px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* ============================================
+   17. ANIMATIONS - MINIMAL & SUBTLE
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(6px);
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   18. RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Sticky navbar adjustments */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: var(--bg-primary);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        padding: 1.5rem 0;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Section spacing */
+    .section {
+        padding: 3rem var(--spacing-lg);
+    }
+
+    .hero {
+        padding: 2rem var(--spacing-lg);
+        margin-top: 60px;
+    }
+
+    /* Two-column to single column */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Timeline adjustments */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 60px;
+    }
+
+    .timeline-marker {
+        left: 6px;
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Grid adjustments */
+    .projects-grid,
+    .books-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .nav-container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Typography adjustments */
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    /* Button layout */
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Profile image reduction */
+    .profile-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* Footer adjustments */
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Spacing reduction */
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .hero {
+        margin-top: 50px;
+    }
+
+    /* Grid single column */
+    .playlist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-menu {
+        top: 55px;
+    }
+}
+
